@@ -74,9 +74,9 @@ void Simulation::tick()
         }
     }
 
-    RegularMovementStrat regularStrat;
-    LockdownMovementStrat lockdownStrat;
-    SlowdownMovementStrat slowdownStrat;
+    RegularMovement regularStrat;
+    LockdownMovement lockdownStrat;
+    SlowdownMovement slowdownStrat;
 
     
     //int numberInfected = regularStrat.move(dt, _subjects, counter/30);
