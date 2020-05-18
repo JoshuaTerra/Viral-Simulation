@@ -74,24 +74,21 @@ void Simulation::tick()
         }
     }
 
-    int numberInfected = 0;
+    RegularMovementStrat regularStrat;
+    LockdownMovementStrat lockdownStrat;
+    SlowdownMovementStrat slowdownStrat;
 
-    for(Subject& s : _subjects)
-    {
-        s.set_x(s.x() + s.dx() * dt);
-        s.set_y(s.y() + s.dy() * dt);
-
-        if(s.infected())
-        {
-            numberInfected++;
-        }
-    }
+    
+    //int numberInfected = regularStrat.move(dt, _subjects, counter/30);
+    //int numberInfected = lockdownStrat.move(dt, _subjects, counter/30);
+    int numberInfected = slowdownStrat.move(dt, _subjects, counter/30);
 
     if(counter % 30 == 0)
     {
         _sh.get()->communicate_number_infected(counter/30,numberInfected);
     }
     
+
 
     draw_to_canvas();
 }

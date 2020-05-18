@@ -40,10 +40,17 @@ class Subject
         void infect();
         double angle();
         double speed();
+        double setSpeed();
+        void setLocked(bool lock);
+        bool getLocked();
+        void setSlow(bool slow);
+        bool slow();
     private:
         double _x = 0,_y = 0, _dx = 0, _dy = 0;
         bool _infected = false;
         int _radius = 0;
+        bool locked = false;
+        bool _slow = true;
 };
 
 };

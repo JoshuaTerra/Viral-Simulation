@@ -21,6 +21,7 @@
 #include "subject.h"
 #include "canvas.h"
 #include "statistics_handler.h"
+#include "strategy.h"
 
 namespace corsim
 {
